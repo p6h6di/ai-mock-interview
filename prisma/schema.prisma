@@ -1,0 +1,94 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model User {
+  id            String      @id @default(cuid())
+  name          String?
+  email         String?     @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  Interview     Interview[]
+  Feedback      Feedback[]
+}
+
+model Interview {
+  id             String @id @default(cuid())
+  jobRole        String
+  jobDescription String
+  experience     Int
+  questionRange  Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId    String
+  user      User       @relation(fields: [userId], references: [id])
+  questions Question[]
+  feedbacks Feedback[]
+}
+
+model Question {
+  id      String @id @default(cuid())
+  content String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  interviewId String
+  interview   Interview  @relation(fields: [interviewId], references: [id])
+  answers     Answer[]
+  feedbacks   Feedback[]
+}
+
+model Answer {
+  id      String @id @default(cuid())
+  content String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id])
+}
+
+model Feedback {
+  id          String    @id @default(cuid())
+  content     String
+  answer      String
+  rating      Int
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  interviewId String
+  interview   Interview @relation(fields: [interviewId], references: [id])
+  questionId  String
+  question    Question  @relation(fields: [questionId], references: [id])
+
+  @@unique([userId, interviewId, questionId])
+}
