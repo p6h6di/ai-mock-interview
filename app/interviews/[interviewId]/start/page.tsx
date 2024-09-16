@@ -203,7 +203,7 @@ const InterviewStartPage = ({
 
   return (
     <motion.div
-      className="h-screen overflow-y-auto scroll-smooth scrollbar-hide sm:h-[80vh]"
+      className="z-50 h-screen overflow-y-auto scroll-smooth scrollbar-hide sm:h-[80vh]"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -223,8 +223,8 @@ const InterviewStartPage = ({
               >
                 <Icons.right_arrow className="size-8" />
               </Button>
-              <h1 className="font-playfair text-2xl font-bold tracking-wide antialiased sm:text-3xl">
-                Interview Feedback
+              <h1 className="font-playfair text-2xl font-bold tracking-wide text-black antialiased sm:text-3xl">
+                Interview Questions
               </h1>
             </div>
             <Link
@@ -254,7 +254,7 @@ const InterviewStartPage = ({
                       >
                         <Icons.arrow_left className="size-6 text-gray-500" />
                       </motion.button>
-                      <span className="font-playfair text-xl font-bold">
+                      <span className="font-playfair text-xl font-bold text-black">
                         Question {selectedIndex + 1} of{" "}
                         {interview.questions.length}
                       </span>
