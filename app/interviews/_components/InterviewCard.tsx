@@ -63,7 +63,7 @@ const InterviewCard: React.FC<InterviewCardProps> = ({ interview }) => {
             href={`/interviews/${interview.id}/feedback`}
             className={buttonVariants({
               variant: "outline",
-              className: "w-full",
+              className: "w-full border border-gray-300 text-black/80",
             })}
           >
             Feedback

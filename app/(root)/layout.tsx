@@ -7,7 +7,7 @@ export default function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="grid min-h-dvh grid-rows-[1fr_auto]">
+    <div className="grid min-h-dvh grid-rows-[1fr_auto] bg-white">
       <div className="flex items-center justify-center">
         <div className="relative py-3 sm:mx-auto sm:max-w-xl">{children}</div>
       </div>

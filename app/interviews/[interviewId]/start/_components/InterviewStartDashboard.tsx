@@ -86,7 +86,10 @@ const InterviewStartDashboard = ({ interviewId }: { interviewId: string }) => {
             </div>
             <Link
               href={`/interviews/${interview.id}/feedback`}
-              className={buttonVariants({ variant: "outline" })}
+              className={buttonVariants({
+                variant: "outline",
+                className: "text-black",
+              })}
             >
               Get Feedback
             </Link>

@@ -29,7 +29,7 @@ const GoogleButton = ({ isChecked }: { isChecked: boolean }) => {
       onClick={handleSignIn}
       variant="outline"
       size="lg"
-      className="w-full space-x-2.5 leading-none"
+      className="w-full space-x-2.5 leading-none text-black"
       disabled={!isChecked}
     >
       {isLoading ? (

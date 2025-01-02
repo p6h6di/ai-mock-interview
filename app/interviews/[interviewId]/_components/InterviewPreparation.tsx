@@ -59,7 +59,7 @@ const InterviewPreparation = ({ interviewId }: { interviewId: string }) => {
             className="mb-6 space-y-2 text-center sm:mb-8"
             variants={itemVariants}
           >
-            <h1 className="font-playfair text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl">
+            <h1 className="font-playfair text-3xl font-bold tracking-normal text-black sm:text-4xl md:text-5xl">
               AI Mock Interview
             </h1>
             <p className="text-sm font-normal text-gray-600 sm:text-base md:text-lg">
@@ -119,7 +119,7 @@ const InterviewPreparation = ({ interviewId }: { interviewId: string }) => {
           </motion.div>
 
           <motion.div
-            className="mx-auto w-full space-y-2 rounded-md border bg-white p-3 shadow-sm sm:w-11/12 sm:space-y-2.5 sm:p-4 md:w-4/5"
+            className="mx-auto w-full space-y-2 rounded-md border border-gray-100 bg-white p-3 shadow-sm sm:w-11/12 sm:space-y-2.5 sm:p-4 md:w-4/5"
             variants={itemVariants}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >

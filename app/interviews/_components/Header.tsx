@@ -80,7 +80,7 @@ const Header = () => {
         <Button
           onClick={handleSignOut}
           variant="outline"
-          className="w-full transition duration-300 hover:bg-gray-100 sm:w-auto"
+          className="w-full border border-gray-300 text-black transition duration-300  hover:bg-gray-100 sm:w-auto"
         >
           {isLoading ? (
             <Spinner className="mr-2 size-4" />

@@ -229,7 +229,11 @@ const InterviewStartPage = ({
             </div>
             <Link
               href={`/interviews/${interview.id}/feedback`}
-              className={buttonVariants({ variant: "outline", size: "lg" })}
+              className={buttonVariants({
+                variant: "outline",
+                size: "lg",
+                className: "text-black border border-gray-300",
+              })}
             >
               Get Feedback
             </Link>
@@ -287,7 +291,7 @@ const InterviewStartPage = ({
                         >
                           {transcribedText && (
                             <>
-                              <h1 className="mb-1 text-xs font-medium">
+                              <h1 className="mb-1 text-xs font-medium text-black/70">
                                 Recorded Answer:
                               </h1>
                               <p className="text-muted-foreground">
@@ -297,7 +301,7 @@ const InterviewStartPage = ({
                           )}
                           {isRecording && interimResult && (
                             <div className="my-2 rounded-lg border p-3">
-                              <h3 className="mb-1 text-xs font-medium italic">
+                              <h3 className="mb-1 text-xs font-medium italic text-black/70">
                                 Recording your voice...
                               </h3>
                               <p className="italic text-muted-foreground">
@@ -320,7 +324,7 @@ const InterviewStartPage = ({
               className="flex flex-col space-y-6"
               variants={itemVariants}
             >
-              <div className="size-full min-h-80 rounded-md border border-gray-50 bg-gray-100 sm:min-h-0">
+              <div className="size-full min-h-80 rounded-lg border border-gray-50 bg-gray-200 sm:min-h-0">
                 <div className="flex h-full items-center justify-center">
                   {isWebcamEnabled ? (
                     <Webcam
@@ -340,7 +344,7 @@ const InterviewStartPage = ({
               <div className="flex justify-center space-x-4">
                 <Button
                   variant="outline"
-                  className="w-full"
+                  className="w-full border-gray-300 text-black"
                   onClick={toggleWebcam}
                 >
                   {isWebcamEnabled ? "Disable Webcam" : "Enable Webcam"}

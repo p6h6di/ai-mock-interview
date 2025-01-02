@@ -32,20 +32,20 @@ const Header = ({ interview }: { interview: Interview }) => {
         >
           <Icons.right_arrow className="size-8" />
         </Button>
-        <h1 className="font-playfair text-2xl font-bold tracking-wide antialiased sm:text-3xl">
+        <h1 className="font-playfair text-2xl font-bold tracking-wide text-black antialiased sm:text-3xl">
           Interview Feedback
         </h1>
       </div>
-      <div className="inline-flex items-center space-x-2.5 rounded-lg border px-4 py-2 leading-none">
-        <Icons.star className="relative size-5 shrink-0" />
+      <div className="inline-flex items-center space-x-2.5 rounded-lg border border-gray-200 px-4 py-2 leading-none">
+        <Icons.star className="relative size-5 shrink-0 text-black" />
         <div className="flex items-baseline">
           <div className="relative w-8 text-center">
-            <span className="invisible">{overallRating}</span>
-            <motion.span className="absolute -inset-1 text-base font-medium">
+            <span className="invisible text-black">{overallRating}</span>
+            <motion.span className="absolute -inset-1 text-base font-medium text-black">
               {rounded}
             </motion.span>
           </div>
-          <span className="text-base font-medium ">/ 10</span>
+          <span className="text-base font-medium text-black">/ 10</span>
         </div>
       </div>
     </div>
