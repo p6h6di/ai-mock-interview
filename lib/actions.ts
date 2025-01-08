@@ -360,8 +360,7 @@ export async function createUploadUrl(lessonId: string) {
       encoding_tier: "baseline",
       passthrough,
     },
-    // TODO: Change this origin to your-domain.com
-    cors_origin: "*",
+    cors_origin: "https://ai-mock-interview-smoky.vercel.app",
   });
 
   // Update existing or create a new record in the database
