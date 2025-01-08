@@ -22,7 +22,7 @@ const RecentInterviews = () => {
       >
         <Icons.add_circle className="size-5 text-blue-600 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110 group-hover:text-blue-600/70" />
         <span className="text-base text-blue-600 transition-all duration-300 group-hover:translate-x-1">
-          create
+          create interview
         </span>
       </Link>
     </motion.div>

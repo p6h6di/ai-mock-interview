@@ -11,6 +11,8 @@ import NoInterviewsMessage from "./NoInterviewsMessage";
 import InterviewCard from "./InterviewCard";
 import { Interview } from "@prisma/client";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { Icons } from "@/components/Icons";
 
 const InterviewDashboard = () => {
   const {
@@ -53,6 +55,20 @@ const InterviewDashboard = () => {
               <InterviewCard key={interview.id} interview={interview} />
             ))}
           </motion.div>
+          <div className="flex my-10 justify-between">
+            <h1 className="font-playfair text-lg font-bold text-gray-800 sm:text-xl">
+              All Courses
+            </h1>
+            <Link
+              href="/teach"
+              className="group flex items-center space-x-2 text-blue-600 transition-colors duration-300 hover:text-blue-600/70"
+            >
+              <Icons.add_circle className="size-5 text-blue-600 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110 group-hover:text-blue-600/70" />
+              <span className="text-base text-blue-600 transition-all duration-300 group-hover:translate-x-1">
+                add course
+              </span>
+            </Link>
+          </div>
           {(!interviews || interviews.length === 0) && <NoInterviewsMessage />}
         </div>
       </div>
