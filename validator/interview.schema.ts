@@ -25,7 +25,7 @@ export const InterviewSchema = z.object({
       invalid_type_error:
         "Question range must be a number. Please enter a valid numeric value.",
     })
-    .min(5, {
+    .min(2, {
       message:
         "Too few questions! Please select at least 5 questions for a meaningful interview.",
     })
